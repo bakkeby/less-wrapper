@@ -25,7 +25,7 @@ bashmarklets/less-wrapper/less_wrapper.inc:7:	if [ ! -z "${_LESS_WRAPPER_BIN}" ]
 bashmarklets/less-wrapper/less_wrapper.inc:8:		local LESS=${_LESS_WRAPPER_BIN}
 
 [bash@marklet:~/]
-$ vi bashmarklets/less-wrapper/less_wrapper.inc:8:
+$ less bashmarklets/less-wrapper/less_wrapper.inc:8:
 ```
 
 ## How to install
