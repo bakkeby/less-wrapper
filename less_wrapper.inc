@@ -6,15 +6,15 @@
 less () {
 	if [ ! -z "${_LESS_WRAPPER_BIN}" ]; then
 		local LESS=${_LESS_WRAPPER_BIN}
-        elif [ -x /usr/bin/less ]; then
-                local LESS=/usr/bin/less
+	elif [ -x /usr/bin/less ]; then
+		local LESS=/usr/bin/less
 	else
 		local LESS=/bin/less
-        fi
-        
-        # file.ext ?23?
-        local filename=$1
-        local line_num=$2
+	fi
+
+	# file.ext ?23?
+	local filename=$1
+	local line_num=$2
 
 	if [ ! -f "$filename" ]; then
 		# file.ext:23
@@ -29,8 +29,8 @@ less () {
 	fi
 	
 	if [[ $line_num =~ ^[0-9]+$ ]] && [ -f "$filename" ]; then
-		$LESS +$line_num ${_LESS_WRAPPER_COMMANDS:-"-w -g -j 10"} $filename
+		$LESS -R +$line_num ${_LESS_WRAPPER_COMMANDS:-"-w -g -j 10"} $filename
 	else
-		$LESS $filename
+		$LESS -R $filename
 	fi
 }
